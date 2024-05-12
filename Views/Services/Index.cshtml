@@ -1,0 +1,61 @@
+@model IEnumerable<ProjectNet.Models.ServicesModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container">
+    <div class="serviceBoxes">
+        <h2>Våra tjänster</h2>
+@foreach (var item in Model) {
+    <div class="serviceBox">
+        <p class="bold">@Html.DisplayFor(modelItem => item.Service)</p>
+        <p>@Html.DisplayFor(modelItem => item.Description)</p>
+        <p>Pris: @Html.DisplayFor(modelItem => item.Price) kronor</p>
+    </div>
+}
+</div>
+
+
+
+@* Spärrat för ADMIN *@
+@* 
+<p>
+    <a asp-action="Create">Skapa ny</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Service)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Service)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Redigera</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Information</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Radera</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table> *@

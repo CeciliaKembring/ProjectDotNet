@@ -1,0 +1,54 @@
+@model IEnumerable<ProjectNet.Models.BookingModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="container">
+<h1>Mina bokningar</h1>
+
+<p>
+    <a asp-action="Create">Skapa bokning</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Time)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telephonenumber)
+            </th>
+             <th>
+                @Html.DisplayNameFor(model => model.Service)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Time)
+            </td>
+              <td>
+                @Html.DisplayFor(modelItem => item.Telephonenumber)
+            </td>
+               <td>
+                @Html.DisplayFor(modelItem => item.Service)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Redigera</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Information</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Radera</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+</div>
