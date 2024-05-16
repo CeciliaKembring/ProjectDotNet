@@ -286,3 +286,4 @@
 /Users/ADamHolmberg/ProjectNet/obj/Debug/net8.0/ProjectNet.pdb
 /Users/ADamHolmberg/ProjectNet/obj/Debug/net8.0/ProjectNet.genruntimeconfig.cache
 /Users/ADamHolmberg/ProjectNet/obj/Debug/net8.0/ref/ProjectNet.dll
+/Users/ADamHolmberg/ProjectNet/obj/Debug/net8.0/ProjectNet.sourcelink.json

@@ -75,9 +75,13 @@ public async Task<IActionResult> Create([Bind("Id,Date,Time,ServiceId,Telephonen
         await _context.SaveChangesAsync();
         return RedirectToAction(nameof(Index));
     }
-    ViewData["ServiceId"] = new SelectList(_context.Services, "Id", "Service", bookingModel.ServiceId);
+    
+    // Fyll ViewBag.ServiceId med SelectList av tjänster
+    ViewBag.ServiceId = new SelectList(_context.Services, "Id", "Service");
+
     return View(bookingModel);
 }
+
 
 
         // GET: Booking/Edit/5

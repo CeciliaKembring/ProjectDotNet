@@ -9,18 +9,18 @@ public class BookingModel {
     public string? Date { get; set; }
 
     [Required(ErrorMessage = "Vänligen ange en giltig tid mellan 10:00 och 16:00.")]
-    [DataType(DataType.Time)]
-    [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:HH:mm}")]
+    [Display(Name = "Tid")]
     public DateTime? Time { get; set; }
 
 
     [Required(ErrorMessage = "Välj tjänst")]
+     [Display(Name = "Tjänst")]
     public int ServiceId { get; set; }
 
     [Display(Name = "Tjänst")]
     public ServicesModel? Service { get; set; }
 
-    [Required]
+
     public string? BookedBy {get; set;}
 
     [Required(ErrorMessage = "Ange telefonnnummer")]
